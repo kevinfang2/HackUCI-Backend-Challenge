@@ -1,12 +1,12 @@
 # HackUCI-Backend-Challenge
 
 ## To run  
-Set up
+Set up: 
 `npm install`
 
 Add environmental variables from sample.env
 
-Run server
+Run server: 
 `node routes.js`
 
 Runs on localhost:3000
