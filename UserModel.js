@@ -43,4 +43,22 @@ UserModel.addSecret = function(email, secret, callback){
   }
 };
 
+UserModel.guessSecret = function(email, secret, callback){
+  console.log(users)
+  if (!(email in users)){
+      callback(false, false, "User not found");
+  }
+  else if (!("secret" in users[email])){
+      callback(false, false, "User has no secret");
+  }
+  else{
+      if (users[email]["secret"] != secret){
+          callback(true, false);
+      }
+      else{
+          callback(true, true);
+      }
+  }
+};
+
 module.exports = UserModel;

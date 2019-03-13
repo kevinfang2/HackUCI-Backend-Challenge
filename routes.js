@@ -58,7 +58,6 @@ app.put('/user/addSecret', function(req, res){
     var token = req.body.token;
     var secret = req.body.secret;
     jwt.verify(token, JWT_SECRET, (errMsg, decoded) => {
-        console.log(errMsg, decoded, token, secret)
         if (errMsg) {
             return res.status(403).send({message: errMsg });
         } else {
@@ -75,7 +74,14 @@ app.put('/user/addSecret', function(req, res){
 
 //TODO
 app.get('/user/guessSecret', function(req, res){
-    return res.status(500).send("Not Implemented");
+    var email = req.body.email;
+    var secret = req.body.secret;
+    User.guessSecret(email, secret, function(userSuccess, guessSuccess, errMsg){
+        if (!userSuccess){
+            return res.status(404).send({message:errMsg});
+        }
+        return res.status(200).send(guessSuccess);
+    });
 });
 
 
