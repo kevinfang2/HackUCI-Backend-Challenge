@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "d28efcba-c6eb-452e-976b-9d2c65ef7f53",
+		"name": "hackuci challenges",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"a@b.com\",\n\t\"password\":\"abc\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/user/loginUser",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"loginUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\n\t\"email\":\"a@b.com\",\n\t\"password\":\"abc\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/user/createUser",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addSecret",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFAYi5jb20iLCJpYXQiOjE1NTI0NjQyMzIsImV4cCI6MTU1MjU1MDYzMn0.2ji4e6d483bhmFoSpaYGUAjZn-6j1HIJEpBSmLt36YQ\",\n\t\"secret\":\"hi\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/user/addSecret",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"addSecret"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/user/guessSecret",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"a@b.com\",\n\t\"secret\":\"hi\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/user/guessSecret",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"guessSecret"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
